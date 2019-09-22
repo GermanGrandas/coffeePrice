@@ -11,7 +11,7 @@ import "katex/dist/katex.min.css"
 
 const { Title } = Typography
 
-export class index extends Component {
+export class CopUsd extends Component {
   state = {
     data: { total: 0 },
   }
@@ -21,21 +21,22 @@ export class index extends Component {
     })
   }
   render() {
-    const func = String.raw`\frac{PrecioKG*FR+gastos}{70*TRM*2.2046}`
+    const func = String.raw`\frac{(\frac{FR}{12.5})*PRECIOARROBA + gastos}{TRM * 154.322}`
     let { total } = this.state.data
     return (
       <Layout>
         <SEO title="Home" />
-        <Title>COP -> USD</Title>
+        <Title>COP Arrobas -> USD</Title>
         <Title level={2}>
-          Para evaluar el pago en dólares de una carga de café se debe:
+          Para evaluar el pago en dólares de una carga de café por arrobas se
+          debe:
         </Title>
         <Col align="middle" type="flex">
           <Row>
             <BlockMath>{func}</BlockMath>
           </Row>
         </Col>
-        <Form total={total} updTotal={this.updateTotal} />
+        <Form total={total} updTotal={this.updateTotal} usd="arrobas" />
         <div
           style={{
             margin: `32px`,
@@ -57,4 +58,4 @@ export class index extends Component {
   }
 }
 
-export default index
+export default CopUsd
