@@ -52,7 +52,7 @@ export class Formulario extends Component {
     const gastos = 60000
 
     if (usd == "usd") {
-      total = (precio * 2.2046 * TRM * 70 - gastos) / FR
+      total = ((precio * 2.2046 * TRM * 70) - gastos) / FR
       updTotal(total.toPrecision(4) * 1)
     } else if (usd == "arrobas") {
       total = ((FR / 12.5) * precio + gastos) / (TRM * 154.322)
