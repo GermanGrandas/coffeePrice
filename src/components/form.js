@@ -51,10 +51,10 @@ export class Formulario extends Component {
     FR = parseFloat(FR)
     const gastos = 60000
 
-    if (usd == "usd") {
+    if (usd === "usd") {
       total = ((precio * 2.2046 * TRM * 70) - gastos) / FR
       updTotal(total.toPrecision(4) * 1)
-    } else if (usd == "arrobas") {
+    } else if (usd === "arrobas") {
       total = ((FR / 12.5) * precio + gastos) / (TRM * 154.322)
       updTotal(total.toPrecision(3))
     } else {
