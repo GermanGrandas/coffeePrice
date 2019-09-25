@@ -49,7 +49,7 @@ export class Formulario extends Component {
     precio = parseFloat(precio)
     TRM = parseFloat(TRM)
     FR = parseFloat(FR)
-    const gastos = 60000
+    const gastos = 100000
 
     if (usd === "usd") {
       total = ((precio * 2.2046 * TRM * 70) - gastos) / FR
